@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5b216f">
+<title>For Swara 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.12) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,.12) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 75%, rgba(255,255,255,.1) 0 2px, transparent 3px),
+        linear-gradient(155deg, #30134c 0%, #632579 43%, #ee5794 100%);
+}
+
+/* ---------- BACKGROUND ---------- */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,.7);
+    border-radius: 50%;
+    animation: floatStar linear infinite;
+}
+
+@keyframes floatStar {
+    from {
+        transform: translateY(105vh);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+/* ---------- SCREENS ---------- */
+
+.screen {
+    position: fixed;
+    inset: 0;
+    padding: 30px 20px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transform: translateY(25px) scale(.98);
+    pointer-events: none;
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.content {
+    width: min(700px, 100%);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: 600;
+    margin-bottom: 12px;
+    opacity: .92;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+}
+
+h1 {
+    font-size: clamp(48px, 10vw, 105px);
+    line-height: .92;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(34px, 7vw, 65px);
+    margin-bottom: 10px;
+}
+
+.sub {
+    font-size: clamp(15px, 2.5vw, 19px);
+    line-height: 1.6;
+    opacity: .9;
+    margin-bottom: 25px;
+}
+
+/* ---------- BUTTONS ---------- */
+
+button {
+    font-family: inherit;
+}
+
+.primary,
+.ghost {
+    border-radius: 999px;
+    padding: 14px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.primary {
+    border: none;
+    background: white;
+    color: #562064;
+    box-shadow: 0 12px 35px rgba(40, 5, 60, .25);
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(40, 5, 60, .35);
+}
+
+.ghost {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.4);
+    color: white;
+}
+
+.ghost:hover {
+    background: rgba(255,255,255,.18);
+    transform: translateY(-3px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ---------- CAKE ---------- */
+
+.cake-area {
+    width: 210px;
+    height: 200px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.cake {
+    position: absolute;
+    width: 170px;
+    height: 80px;
+    left: 20px;
+    bottom: 35px;
+
+    background: linear-gradient(
+        to bottom,
+        #e99a72 0 35%,
+        #ad5c61 36% 100%
+    );
+
+    border-radius: 15px 15px 8px 8px;
+    box-shadow: inset 0 -9px rgba(70,25,50,.15);
+}
+
+.icing {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: -9px;
+    left: 0;
+
+    background: #fff5ee;
+    border-radius: 15px;
+}
+
+.icing::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 10px;
+    height: 25px;
+    background: #fff5ee;
+    border-radius: 0 0 15px 15px;
+}
+
+.plate {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    width: 190px;
+    height: 10px;
+    background: #ffd3e5;
+    border-radius: 50%;
+}
+
+.candle {
+    position: absolute;
+    width: 10px;
+    height: 55px;
+    left: 50%;
+    top: 35px;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 6px;
+}
+
+.flame {
+    position: absolute;
+    width: 22px;
+    height: 30px;
+    left: 50%;
+    top: 8px;
+    transform: translateX(-50%) rotate(-45deg);
+
+    background: #ffd03b;
+    border-radius: 50% 50% 50% 0;
+
+    box-shadow: 0 0 30px #ffb51e;
+
+    animation: flame .8s infinite alternate;
+}
+
+@keyframes flame {
+    to {
+        transform: translateX(-50%) rotate(-45deg) scale(.85);
+    }
+}
+
+/* ---------- BIRTHDAY ---------- */
+
+.birthday h1 span {
+    color: #ffd3e6;
+}
+
+/* ---------- HEART ---------- */
+
+.big-heart {
+    font-size: clamp(110px, 25vw, 180px);
+    color: #f52674;
+
+    text-shadow:
+        0 0 15px rgba(255,70,140,.6),
+        0 0 45px rgba(255,70,140,.45);
+
+    cursor: grab;
+
+    animation: heartbeat 1.4s infinite;
+    user-select: none;
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.pull-text {
+    font-size: 12px;
+    letter-spacing: 5px;
+    opacity: .65;
+    margin: 10px 0 25px;
+}
+
+/* ---------- BALLOONS ---------- */
+
+.balloons {
+    height: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 13px;
+    margin: 25px 0;
+}
+
+.balloon {
+    position: relative;
+    width: clamp(52px, 11vw, 80px);
+    height: clamp(72px, 15vw, 110px);
+
+    border: none;
+    border-radius: 50% 50% 46% 46%;
+
+    cursor: pointer;
+    color: transparent;
+
+    box-shadow:
+        inset -10px -12px 20px rgba(0,0,0,.13),
+        inset 8px 7px 12px rgba(255,255,255,.35),
+        0 10px 20px rgba(0,0,0,.15);
+
+    transition: .45s ease;
+}
+
+.balloon::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    background: inherit;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+
+    width: 1px;
+    height: 80px;
+
+    background: rgba(255,255,255,.55);
+
+    left: 50%;
+    top: 98%;
+}
+
+.balloon:hover {
+    transform: translateY(-12px) rotate(-3deg);
+}
+
+.balloon.popped {
+    opacity: 0;
+    transform:
+        translateY(-100px)
+        scale(.2)
+        rotate(25deg);
+
+    pointer-events: none;
+}
+
+.pink {
+    background: #ff8db7;
+}
+
+.aqua {
+    background: #4de1ce;
+}
+
+.orange {
+    background: #ff9c52;
+}
+
+.purple {
+    background: #b89aff;
+}
+
+.yellow {
+    background: #ffd348;
+}
+
+.message {
+    min-height: 60px;
+    max-width: 620px;
+
+    margin: 0 auto 20px;
+    padding: 17px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.28);
+
+    background:
+        rgba(255,255,255,.1);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    font-weight: 600;
+}
+
+/* ---------- MEMORY ---------- */
+
+.polaroid {
+    width: min(340px, 85vw);
+    margin: 25px auto;
+
+    background: white;
+    color: #68465d;
+
+    padding: 12px 12px 22px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(30,0,35,.3);
+
+    transform: rotate(-2deg);
+}
+
+.photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8bad5,
+            #ffd981
+        );
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-text {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    color: white;
+}
+
+.polaroid-caption {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    margin-top: 13px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.4);
+}
+
+.dot.active {
+    background: white;
+}
+
+.memory-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* ---------- ENVELOPE ---------- */
+
+.envelope {
+    position: relative;
+
+    width: min(430px, 90vw);
+    aspect-ratio: 1.55;
+
+    margin: 35px auto 50px;
+
+    border: none;
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffd21b,
+            #ff9e00
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 20px 55px
+        rgba(80,30,0,.3);
+
+    transition: .4s ease;
+}
+
+.envelope:hover {
+    transform: scale(1.03);
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+
+    background: #ffc51d;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 58%
+        );
+}
+
+.seal {
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    left: 50%;
+    top: 45%;
+
+    transform:
+        translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff4a8;
+    color: #df9200;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.18);
+
+    z-index: 3;
+}
+
+.envelope-label {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -38px;
+
+    font-weight: 600;
+}
+
+.letter {
+    width: min(620px, 92vw);
+
+    margin: 20px auto;
+
+    padding: 30px;
+
+    background: #fffdf5;
+
+    color: #61475a;
+
+    text-align: left;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(30,0,35,.35);
+
+    animation: letterOpen .7s ease;
+}
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform:
+            scale(.85)
+            rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.letter h3 {
+    color: #a36d27;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.letter p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.signature {
+    text-align: right;
+    font-family: "Playfair Display", serif;
+}
+
+/* ---------- FINAL ---------- */
+
+.final-heart {
+    font-size: 120px;
+    color: #ff78aa;
+
+    text-shadow:
+        0 0 30px
+        rgba(255,100,170,.7);
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.final h1 {
+    font-size: clamp(55px, 11vw, 105px);
+}
+
+/* ---------- MUSIC ---------- */
+
+.music {
+    position: fixed;
+
+    right: 18px;
+    bottom: 18px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    color: white;
+
+    background:
+        rgba(0,0,0,.15);
+
+    backdrop-filter: blur(8px);
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    font-size: 21px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:600px) {
+
+    .screen {
+        padding: 20px 15px 75px;
+    }
+
+    .balloons {
+        height: 230px;
+        gap: 7px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    .letter {
+        padding: 22px;
+        font-size: 14px;
+    }
+
+    .cake-area {
+        transform: scale(.9);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<!-- ============================= -->
+<!-- SCREEN 1 — CAKE -->
+<!-- ============================= -->
+
+<section class="screen active" id="screen1">
+
+    <div class="content">
+
+        <div class="cake-area">
+
+            <div class="flame"></div>
+
+            <div class="candle"></div>
+
+            <div class="cake">
+
+                <div class="icing"></div>
+
+                <div class="plate"></div>
+
+            </div>
+
+        </div>
+
+        <p class="eyebrow">
+            First things first 🎂
+        </p>
+
+        <h2>
+            Baking something sweet...
+        </h2>
+
+        <p class="sub">
+            I made a little something just for you.
+        </p>
+
+        <button
+            class="primary"
+            onclick="nextScreen()">
+
+            Open your surprise →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- SCREEN 2 — BIRTHDAY -->
+<!-- ============================= -->
+
+<section class="screen" id="screen2">
+
+    <div class="content birthday">
+
+        <p class="eyebrow">
+            it's officially your day
+        </p>
+
+        <h1>
+            Happy<br>
+            <span>Birthday,</span><br>
+            Swara
+        </h1>
+
+        <p class="sub">
+            and just like that, you're turning
+            <b>21</b> ✨
+        </p>
+
+        <button
+            class="primary"
+            onclick="nextScreen()">
+
+            Keep going 💕
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- SCREEN 3 — HEART -->
+<!-- ============================= -->
+
+<section class="screen" id="screen3">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            a little something, for you
+        </p>
+
+        <div
+            class="big-heart"
+            id="heart">
+
+            ♥
+        </div>
+
+        <p class="pull-text">
+            PULL & RELEASE
+        </p>
+
+        <button
+            class="ghost"
+            onclick="nextScreen()">
+
+            I found it →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- SCREEN 4 — BALLOONS -->
+<!-- ============================= -->
+
+<section class="screen" id="screen4">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            5 balloons. Each one holds a reason. 🎈
+        </p>
+
+        <h2>
+            Pop the balloons
+        </h2>
+
+        <p class="sub">
+            Each balloon has something I want you to know.
+        </p>
+
+
+        <div class="balloons">
+
+            <button
+                class="balloon pink"
+                data-message="You remember the little things I forget. 💗"
+                onclick="popBalloon(this)">
+                1
+            </button>
+
+            <button
+                class="balloon aqua"
+                data-message="You make ordinary days feel special. ✨"
+                onclick="popBalloon(this)">
+                2
+            </button>
+
+            <button
+                class="balloon orange"
+                data-message="You somehow always know when I need you. 🫶"
+                onclick="popBalloon(this)">
+                3
+            </button>
+
+            <button
+                class="balloon purple"
+                data-message="Your laugh is one of my favourite sounds. 🌸"
+                onclick="popBalloon(this)">
+                4
+            </button>
+
+            <button
+                class="balloon yellow"
+                data-message="Life is simply better with you in it. 💛"
+                onclick="popBalloon(this)">
+                5
+            </button>
+
+        </div>
+
+
+        <div
+            class="message"
+            id="balloonMessage">
+
+            Tap a balloon 💕
+
+        </div>
+
+
+        <button
+            id="balloonNext"
+            class="primary hidden"
+            onclick="nextScreen()">
+
+            One more thing →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- SCREEN 5 — MEMORY -->
+<!-- ============================= -->
+
+<section class="screen" id="screen5">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            a moment worth keeping 📸
+        </p>
+
+        <h2>
+            A walk down memory lane
+        </h2>
+
+        <p class="sub">
+            A few little moments with you.
+        </p>
+
+
+        <div class="polaroid">
+
+            <div class="photo">
+
+                <!--
+                Replace memory1.jpg with your photo.
+                You can also use a direct image URL.
+                -->
+
+                <img
+                    id="memoryImage"
+                    src="memory1.jpg"
+                    alt="Memory of Swara"
+                    onerror="showPhotoPlaceholder()">
+
+                <span
+                    id="photoPlaceholder"
+                    class="photo-text">
+
+                    YOUR<br>
+                    PHOTO
+
+                </span>
+
+            </div>
+
+            <p
+                class="polaroid-caption"
+                id="memoryCaption">
+
+                one of my favourite memories ✨
+
+            </p>
+
+        </div>
+
+
+        <div class="dots">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+
+        <div class="memory-controls">
+
+            <button
+                class="ghost"
+                onclick="changeMemory(-1)">
+
+                ←
+            </button>
+
+            <button
+                class="ghost"
+                onclick="changeMemory(1)">
+
+                →
+            </button>
+
+        </div>
+
+
+        <button
+            class="primary"
+            onclick="nextScreen()">
+
+            Read my letter 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- SCREEN 6 — LETTER -->
+<!-- ============================= -->
+
+<section class="screen" id="screen6">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            One last thing, Swara...
+        </p>
+
+        <p class="sub">
+            Nothing would feel right without saying this.
+        </p>
+
+
+        <button
+            class="envelope"
+            id="envelope"
+            onclick="openLetter()">
+
+            <div class="envelope-flap"></div>
+
+            <div class="seal">
+                ♥
+            </div>
+
+            <span class="envelope-label">
+                Tap to open your letter
+            </span>
+
+        </button>
+
+
+        <div
+            class="letter hidden"
+            id="letter">
+
+            <h3>
+                Dear Swara,
+            </h3>
+
+            <p>
+                I keep thinking about how lucky I got with you.
+                You have seen me at my worst and stayed anyway,
+                and I don't say thank you nearly enough.
+            </p>
+
+            <p>
+                You are one of those people who make life feel
+                a little lighter, a little warmer and a lot more
+                beautiful just by being there.
+            </p>
+
+            <p>
+                I hope 21 brings you everything you deserve —
+                happiness, laughter, unforgettable memories,
+                and all the little things that make you smile.
+            </p>
+
+            <p>
+                Never forget how special you are.
+            </p>
+
+            <p class="signature">
+                Happy Birthday, Swara. 💗<br>
+                — From someone who cares about you a lot
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- SCREEN 7 — FINAL -->
+<!-- ============================= -->
+
+<section class="screen" id="screen7">
+
+    <div class="content">
+
+        <div class="final-heart">
+            ♥
+        </div>
+
+        <p class="eyebrow">
+            And finally...
+        </p>
+
+        <h1>
+            Happy 21st,<br>
+            Swara.
+        </h1>
+
+        <p class="sub">
+            May this year be your softest,
+            brightest and happiest one yet. ✨
+        </p>
+
+        <button
+            class="primary"
+            onclick="restart()">
+
+            Replay the surprise ↻
+        </button>
+
+    </div>
+
+</section>
+
+
+<button
+    class="music"
+    id="musicButton"
+    title="Music">
+
+    ♪
+
+</button>
+
+
+<script>
+
+/* =========================================
+   STAR BACKGROUND
+========================================= */
+
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 65; i++) {
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "vw";
+
+    star.style.animationDuration =
+        (8 + Math.random() * 14) + "s";
+
+    star.style.animationDelay =
+        (-Math.random() * 15) + "s";
+
+    star.style.opacity =
+        .2 + Math.random() * .7;
+
+    const size =
+        2 + Math.random() * 4;
+
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    stars.appendChild(star);
+}
+
+
+/* =========================================
+   SCREEN NAVIGATION
+========================================= */
+
+let currentScreen = 0;
+
+const screens = [
+    document.getElementById("screen1"),
+    document.getElementById("screen2"),
+    document.getElementById("screen3"),
+    document.getElementById("screen4"),
+    document.getElementById("screen5"),
+    document.getElementById("screen6"),
+    document.getElementById("screen7")
+];
+
+function showScreen(index) {
+
+    screens[currentScreen]
+        .classList
+        .remove("active");
+
+    currentScreen =
+        (index + screens.length)
+        % screens.length;
+
+    screens[currentScreen]
+        .classList
+        .add("active");
+}
+
+function nextScreen() {
+
+    showScreen(currentScreen + 1);
+
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+const heart =
+    document.getElementById("heart");
+
+heart.addEventListener(
+    "click",
+    function () {
+
+        heart.style.animation = "none";
+
+        heart.offsetHeight;
+
+        heart.style.animation =
+            "heartbeat .5s ease";
+
+        setTimeout(() => {
+
+            heart.style.animation =
+                "heartbeat 1.4s infinite";
+
+        }, 500);
+
+    }
+);
+
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+let popped = 0;
+
+const balloons =
+    document.querySelectorAll(".balloon");
+
+const balloonMessage =
+    document.getElementById(
+        "balloonMessage"
+    );
+
+const balloonNext =
+    document.getElementById(
+        "balloonNext"
+    );
+
+function popBalloon(balloon) {
+
+    if (
+        balloon.classList.contains(
+            "popped"
+        )
+    ) {
+        return;
+    }
+
+    balloon.classList.add("popped");
+
+    popped++;
+
+    balloonMessage.textContent =
+        balloon.dataset.message;
+
+    if (
+        popped === balloons.length
+    ) {
+
+        balloonNext.classList
+            .remove("hidden");
+
+        balloonMessage.textContent =
+            "You found all five. 💗 I have one last thing for you.";
+
+    }
+
+}
+
+
+/* =========================================
+   MEMORY SECTION
+========================================= */
+
+const memories = [
+
+    {
+        image: "memory1.jpg",
+        caption:
+            "one of my favourite memories ✨"
+    },
+
+    {
+        image: "memory2.jpg",
+        caption:
+            "a moment worth keeping 💗"
+    },
+
+    {
+        image: "memory3.jpg",
+        caption:
+            "more memories, more smiles 🌸"
+    }
+
+];
+
+let memoryIndex = 0;
+
+const memoryImage =
+    document.getElementById(
+        "memoryImage"
+    );
+
+const memoryCaption =
+    document.getElementById(
+        "memoryCaption"
+    );
+
+const dots =
+    document.querySelectorAll(".dot");
+
+const photoPlaceholder =
+    document.getElementById(
+        "photoPlaceholder"
+    );
+
+
+function showPhotoPlaceholder() {
+
+    memoryImage.style.display =
+        "none";
+
+    photoPlaceholder.style.display =
+        "block";
+}
+
+
+function loadMemory() {
+
+    memoryImage.style.display =
+        "block";
+
+    photoPlaceholder.style.display =
+        "none";
+
+    memoryImage.src =
+        memories[memoryIndex].image;
+
+    memoryCaption.textContent =
+        memories[memoryIndex].caption;
+
+    dots.forEach(
+        (dot, index) => {
+
+            dot.classList.toggle(
+                "active",
+                index === memoryIndex
+            );
+
+        }
+    );
+
+}
+
+
+function changeMemory(direction) {
+
+    memoryIndex =
+        (
+            memoryIndex +
+            direction +
+            memories.length
+        ) % memories.length;
+
+    loadMemory();
+
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+function openLetter() {
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+    const letter =
+        document.getElementById(
+            "letter"
+        );
+
+    envelope.style.transform =
+        "scale(.7) rotateX(70deg)";
+
+    envelope.style.opacity =
+        "0";
+
+    setTimeout(() => {
+
+        envelope.style.display =
+            "none";
+
+        letter.classList
+            .remove("hidden");
+
+    }, 450);
+
+}
+
+
+/* =========================================
+   RESTART
+========================================= */
+
+function restart() {
+
+    currentScreen = 6;
+
+    showScreen(0);
+
+    popped = 0;
+
+    balloons.forEach(
+        balloon => {
+
+            balloon.classList
+                .remove("popped");
+
+        }
+    );
+
+    balloonMessage.textContent =
+        "Tap a balloon 💕";
+
+    balloonNext.classList
+        .add("hidden");
+
+    memoryIndex = 0;
+
+    loadMemory();
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+    const letter =
+        document.getElementById(
+            "letter"
+        );
+
+    envelope.style.display =
+        "block";
+
+    envelope.style.opacity =
+        "1";
+
+    envelope.style.transform =
+        "";
+
+    letter.classList
+        .add("hidden");
+
+}
+
+
+/* =========================================
+   OPTIONAL MUSIC
+========================================= */
+
+let audio = null;
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+musicButton.addEventListener(
+    "click",
+    function () {
+
+        /*
+         IMPORTANT:
+
+         If you want music, put a file named:
+
+         music.mp3
+
+         in the same folder as index.html.
+
+         Then uncomment the audio line below.
+        */
+
+        if (!audio) {
+
+            audio =
+                new Audio("music.mp3");
+
+            audio.loop = true;
+
+        }
+
+        if (audio.paused) {
+
+            audio.play()
+                .then(() => {
+
+                    musicButton.textContent =
+                        "🔊";
+
+                })
+                .catch(() => {
+
+                    alert(
+                        "Add music.mp3 beside index.html first."
+                    );
+
+                });
+
+        } else {
+
+            audio.pause();
+
+            musicButton.textContent =
+                "♪";
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   INITIALIZE
+========================================= */
+
+loadMemory();
+
+</script>
+
+</body>
+</html>
